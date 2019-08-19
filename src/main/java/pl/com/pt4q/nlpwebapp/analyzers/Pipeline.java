@@ -1,4 +1,4 @@
-package pl.com.pt4q.nerwebapp.analyzers;
+package pl.com.pt4q.nlpwebapp.analyzers;
 
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 

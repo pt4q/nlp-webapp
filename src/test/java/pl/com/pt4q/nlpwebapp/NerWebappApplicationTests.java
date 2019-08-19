@@ -1,4 +1,4 @@
-package pl.com.pt4q.nerwebapp;
+package pl.com.pt4q.nlpwebapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

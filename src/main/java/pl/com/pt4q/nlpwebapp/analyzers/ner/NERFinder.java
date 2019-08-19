@@ -1,11 +1,11 @@
-package pl.com.pt4q.nerwebapp.analyzers.ner;
+package pl.com.pt4q.nlpwebapp.analyzers.ner;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import lombok.AllArgsConstructor;
-import pl.com.pt4q.nerwebapp.analyzers.SentenceAnalyzerInterface;
+import pl.com.pt4q.nlpwebapp.analyzers.SentenceAnalyzerInterface;
 
 import java.util.List;
 

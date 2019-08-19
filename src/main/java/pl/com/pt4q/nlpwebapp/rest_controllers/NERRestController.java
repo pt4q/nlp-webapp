@@ -1,12 +1,12 @@
-package pl.com.pt4q.nerwebapp.rest_controllers;
+package pl.com.pt4q.nlpwebapp.rest_controllers;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import org.springframework.web.bind.annotation.*;
-import pl.com.pt4q.nerwebapp.analyzers.Pipeline;
-import pl.com.pt4q.nerwebapp.analyzers.ner.NERFinder;
-import pl.com.pt4q.nerwebapp.analyzers.ner.TypeEnum;
+import pl.com.pt4q.nlpwebapp.analyzers.Pipeline;
+import pl.com.pt4q.nlpwebapp.analyzers.ner.NERFinder;
+import pl.com.pt4q.nlpwebapp.analyzers.ner.TypeEnum;
 
 import java.util.HashSet;
 import java.util.List;

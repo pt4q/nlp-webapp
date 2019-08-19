@@ -12,7 +12,7 @@
     <artifactId>ner-webapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ner-webapp</name>
-    <description>Neural Entity Recognizer with Spring Boot</description>
+    <description>Natural Language Processing with Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -1,4 +1,4 @@
-package pl.com.pt4q.nerwebapp.analyzers.ner;
+package pl.com.pt4q.nlpwebapp.analyzers.ner;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
