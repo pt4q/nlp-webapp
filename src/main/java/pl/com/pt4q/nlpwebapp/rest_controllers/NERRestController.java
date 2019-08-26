@@ -2,11 +2,9 @@ package pl.com.pt4q.nlpwebapp.rest_controllers;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import org.springframework.web.bind.annotation.*;
-import pl.com.pt4q.nlpwebapp.analyzers.Pipeline;
-import pl.com.pt4q.nlpwebapp.analyzers.ner.NERFinder;
-import pl.com.pt4q.nlpwebapp.analyzers.ner.TypeEnum;
+import pl.com.pt4q.nlpwebapp.analyzers.AnalyzerService;
+import pl.com.pt4q.nlpwebapp.analyzers.TypeEnum;
 
 import java.util.HashSet;
 import java.util.List;
@@ -19,10 +17,9 @@ public class NERRestController {
 
     @PostMapping(value = "/ner")
     public Set<String> ner(@RequestBody final String input, @RequestParam TypeEnum type) {
-        StanfordCoreNLP pipeline = Pipeline.getPipeline();
-        NERFinder finder = new NERFinder(pipeline);
+        AnalyzerService analyzerService = AnalyzerService.getInstance();
 
-        return new HashSet<String>(getWordsByType(finder.analyze(input), type));
+        return new HashSet<String>(getWordsByType(analyzerService.ner(input), type));
     }
 
     private List<String> getWordsByType(List<CoreLabel> coreLabels, TypeEnum type) {

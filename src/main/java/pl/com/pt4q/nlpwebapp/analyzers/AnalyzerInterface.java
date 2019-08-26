@@ -2,7 +2,7 @@ package pl.com.pt4q.nlpwebapp.analyzers;
 
 import java.util.List;
 
-public interface SentenceAnalyzerInterface<R> {
+public interface AnalyzerInterface<R> {
 
     List<R> analyze(String input);
 

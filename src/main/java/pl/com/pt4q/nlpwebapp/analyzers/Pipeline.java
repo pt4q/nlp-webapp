@@ -4,13 +4,13 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 import java.util.Properties;
 
-public class Pipeline {
+class Pipeline {
 
     private static Properties properties;
     private static String propertiesName= "tokenize, ssplit, pos, lemma, ner, parse, sentiment";
     private static StanfordCoreNLP stanfordCoreNLP;
 
-    private Pipeline() {
+    Pipeline() {
     }
 
     static {
