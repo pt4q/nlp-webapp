@@ -1,0 +1,60 @@
+adj - przymiotnik (np. „niemiecki”)
+adjp - przymiotnik poprzyimkowy (np. „niemiecku”)
+adv - przysłówek (np. „głupio”)
+conj - spójnik
+ign - ignorowana część mowy
+indecl - nieodmienna część mowy
+num - liczebnik
+pact - imiesłów przymiotnikowy czynny
+pant - imiesłów przysłówkowy uprzedni
+pcon - imiesłów przysłówkowy współczesny
+ppas - imiesłów przymiotnikowy bierny
+ppron12 - zaimek nietrzecioosobowy
+ppron3 - zaimek trzecioosobowy
+pred - predykatyw (np. „trzeba”)
+prep - przyimek
+siebie - zaimek „siebie”
+subst - rzeczownik
+verb - czasownik
+Atrybuty podstawowych form:
+sg - liczba pojedyncza
+pl - liczba mnoga
+indecl - forma nieodmienna
+irreg - forma nieregularna (nierozpoznana dokładniej pod względem wartości atrybutów, np. subst:irreg)
+nom - mianownik
+gen - dopełniacz
+acc - biernik
+dat - celownik
+inst - narzędnik
+loc - miejscownik
+voc - wołacz
+pos - stopień równy
+comp - stopień wyższy
+sup - stopień najwyższy
+m (a także, w sposób nie do końca uporządkowany, m1... m4) - rodzaj męski
+n - rodzaj nijaki
+f - rodzaj żeński
+pri - pierwsza osoba
+sec - druga osoba
+tri - trzecia osoba
+depr - forma deprecjatywna
+aff - forma niezanegowana
+neg - forma zanegowana
+refl - forma zwrotna czasownika [nie występuje w znacznikach IPI]
+perf - czasownik dokonany
+imperf - czasownik niedokonany
+?perf - czasownik nierozpoznany pod względem aspektu
+nakc - forma nieakcentowana zaimka
+akc - forma akcentowana zaimka
+praep - forma poprzyimkowa
+npraep - forma niepoprzyimkowa
+ger - rzeczownik odsłowny
+imps - forma bezosobowa
+impt - tryb rozkazujący
+inf - bezokolicznik
+fin - forma nieprzeszła
+bedzie - forma przyszła „być”
+praet - forma przeszła czasownika (pseudoimiesłów)
+pot - tryb przypuszczający [nie występuje w znacznikach IPI]
+
+http://morfologik.blogspot.com/2007/09/znaczniki-morfologika.html

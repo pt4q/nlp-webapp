@@ -57,6 +57,27 @@
             <classifier>models</classifier>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.carrot2/morfologik-polish -->
+        <dependency>
+            <groupId>org.carrot2</groupId>
+            <artifactId>morfologik-polish</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.carrot2/morfologik-stemming -->
+        <dependency>
+            <groupId>org.carrot2</groupId>
+            <artifactId>morfologik-stemming</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.carrot2/morfologik-fsa -->
+        <dependency>
+            <groupId>org.carrot2</groupId>
+            <artifactId>morfologik-fsa</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+
     </dependencies>
 
     <build>
