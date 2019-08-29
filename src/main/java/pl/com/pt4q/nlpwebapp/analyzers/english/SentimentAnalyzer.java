@@ -5,11 +5,13 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import lombok.AllArgsConstructor;
 import pl.com.pt4q.nlpwebapp.analyzers.AnalyzerInterface;
+import pl.com.pt4q.nlpwebapp.analyzers.AnalyzersStringFormatter;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
-public class SentimentAnalyzer implements AnalyzerInterface<CoreSentence> {
+class SentimentAnalyzer implements AnalyzerInterface<CoreSentence> {
 
     private StanfordCoreNLP stanfordCoreNLP;
 
@@ -23,15 +25,16 @@ public class SentimentAnalyzer implements AnalyzerInterface<CoreSentence> {
 
     @Override
     public String listToString(List<CoreSentence> coreSentences) {
-        StringBuilder sb = new StringBuilder();
+        return AnalyzersStringFormatter.listToString(toStringList(coreSentences));
+    }
 
-        coreSentences.stream()
-                .forEach(cs -> sb
-                        .append(cs.sentiment())
-                        .append('\t')
-                        .append(cs.toString())
-                        .append('\n'));
+    public List<String[]> toStringList(List<CoreSentence> coreSentences) {
+        return coreSentences.stream()
+                .map(cs -> getSentenceAndSentiment(cs))
+                .collect(Collectors.toList());
+    }
 
-        return sb.toString();
+    private String[] getSentenceAndSentiment(CoreSentence cs) {
+        return new String[]{cs.sentiment(), cs.toString()};
     }
 }

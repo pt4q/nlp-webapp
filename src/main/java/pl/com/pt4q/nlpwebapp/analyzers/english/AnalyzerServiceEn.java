@@ -1,6 +1,7 @@
 package pl.com.pt4q.nlpwebapp.analyzers.english;
 
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import pl.com.pt4q.nlpwebapp.analyzers.AnalyzerInterface;
 
 import java.util.List;
 
@@ -26,7 +27,9 @@ public class AnalyzerServiceEn {
     }
 
     private Tokenizer getTokenizer() {
-        return new Tokenizer(getPipelineNLP());
+        return new Tokenizer().builder()
+                .pipeline(getPipelineNLP())
+                .build();
     }
 
     public List<String> tokenize(String input) {
@@ -34,20 +37,27 @@ public class AnalyzerServiceEn {
         return tokenizer.toStringList(tokenizer.analyze(input));
     }
 
-    public List<String> sentences (String input){
-        return null;
+    private Sentencer getSentencer() {
+        return new Sentencer().builder()
+                .pipeline(getPipelineNLP())
+                .build();
     }
 
-    public List<String[]> lemmatize(String input) {
-        Lemmatizer lemmatizer = new Lemmatizer().builder()
+    public List<String> sentences(String input) {
+        Sentencer sentencer = getSentencer();
+        return sentencer.toStringList(sentencer.analyze(input));
+    }
+
+    public List<String[]> lemma(String input) {
+        AnalyzerInterface lemma = new Lemmatizer().builder()
                 .pipeline(getPipelineNLP())
                 .tokenizer(getTokenizer())
                 .build();
-        return lemmatizer.analyze(input);
+        return lemma.analyze(input);
     }
 
     public List<String[]> ner(String input) {
-        NERFinder nerFinder = new NERFinder().builder()
+        AnalyzerInterface nerFinder = new NERFinder().builder()
                 .stanfordCoreNLP(getPipelineNLP())
                 .tokenizer(getTokenizer())
                 .build();
@@ -55,18 +65,18 @@ public class AnalyzerServiceEn {
     }
 
     public List<String[]> pos(String input) {
-        POSFinder posFinder = new POSFinder().builder()
+        AnalyzerInterface posFinder = new POSFinder().builder()
                 .pipeline(getPipelineNLP())
                 .tokenizer(getTokenizer())
                 .build();
         return posFinder.analyze(input);
     }
 
-    public List<String []> eachSentenceSentiment(String input){
+    public List<String[]> eachSentenceSentiment(String input) {
         return null;
     }
 
-    public List <String> fullTextSentiment (String input){
+    public List<String> fullTextSentiment(String input) {
         return null;
     }
 

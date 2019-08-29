@@ -4,20 +4,24 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import pl.com.pt4q.nlpwebapp.analyzers.AnalyzerInterface;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
 class Tokenizer implements AnalyzerInterface<CoreLabel> {
 
-    private StanfordCoreNLP stanfordCoreNLP;
+    private StanfordCoreNLP pipeline;
 
     @Override
     public List<CoreLabel> analyze(String input) {
         CoreDocument coreDocument = new CoreDocument(input);
-        stanfordCoreNLP.annotate(coreDocument);
+        pipeline.annotate(coreDocument);
 
         return coreDocument.tokens();
     }

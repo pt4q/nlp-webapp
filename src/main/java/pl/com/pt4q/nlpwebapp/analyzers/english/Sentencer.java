@@ -9,37 +9,32 @@ import lombok.NoArgsConstructor;
 import pl.com.pt4q.nlpwebapp.analyzers.AnalyzerInterface;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sentencer implements AnalyzerInterface<String[]> {
+class Sentencer implements AnalyzerInterface<CoreSentence> {
 
-    private StanfordCoreNLP stanfordCoreNLP;
-    private Sentencer sentencer;
+    private StanfordCoreNLP pipeline;
 
-    public String splitSentences(String input) {
-        StringBuilder sb = new StringBuilder();
-
+    @Override
+    public List<CoreSentence> analyze(String input) {
         CoreDocument coreDocument = new CoreDocument(input);
-        stanfordCoreNLP.annotate(coreDocument);
+        pipeline.annotate(coreDocument);
+        return coreDocument.sentences();
+    }
 
-        List<CoreSentence> sentences = coreDocument.sentences();
+    @Override
+    public String listToString(List<CoreSentence> coreSentences) {
+        return toStringList(coreSentences).stream()
+                .map(s -> s + "\n")
+                .collect(Collectors.joining());
+    }
 
-        sentences.stream()
+    public List<String> toStringList(List<CoreSentence> coreSentences) {
+        return coreSentences.stream()
                 .map(CoreSentence::toString)
-                .forEach(s -> sb.append(s).append('\n'));
-
-        return sb.toString();
-    }
-
-    @Override
-    public List<String[]> analyze(String input) {
-        return null;
-    }
-
-    @Override
-    public String listToString(List<String[]> coreLabels) {
-        return null;
+                .collect(Collectors.toList());
     }
 }
